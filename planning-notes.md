@@ -116,3 +116,77 @@ FUTURE IMPROVEMENTS (NOT FOR MONTH 1)
 - Real Flight API Integration
 - Database Storage
 - Web Dashboard
+
+==================================================
+DATA STRUCTURE
+==================================================
+
+Airports:
+
+{
+    code,
+    city,
+    country
+}
+
+Flights:
+
+{
+    airline,
+    flightNumber,
+    origin,
+    destination,
+    seats,
+    passengers,
+    ticketPrice,
+    status
+}
+
+Bookings:
+
+{
+    bookingId,
+    passengerName,
+    flightNumber,
+    checkedIn
+}
+
+==================================================
+FUNCTION MAP
+==================================================
+
+flightReports.js 
+
+showAllFlights
+findFlightByNumber
+findFlightsByDestination
+getTotalPassengers
+findBusiestFlight
+cancelFlight
+countCancelledFlights
+countDelayedFlights
+findFlightsRequiringAttention
+getAvailableSeats
+findFlightsWithAvailableSeats
+getAirportTrafficReport
+findMostPopularDestination
+getFlightsByStatus
+
+bookingReports.js
+
+countCheckedInPassengers
+checkInPassenger
+showPassengersOnFlight
+countCheckedInPassengersForFlight
+getBoardingReadinessForFlight
+
+revenueReports.js
+
+getTotalRevenue
+findHighestRevenueFlight
+getRevenueByFlight
+
+app.js
+
+generateDailyOperationsReport
+runApp
