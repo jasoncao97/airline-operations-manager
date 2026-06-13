@@ -108,3 +108,23 @@ Next Session:
 - Build bookings dataset in data.js
 - Verify data relationships
 - Prepare for report function development
+
+## Session 3 - Data Design
+
+Completed:
+- Built airports dataset
+- Built flights dataset
+- Finalized booking architecture
+
+Key Decisions:
+- Use airport codes as references
+- Remove passenger count from flights
+- Store duration in minutes
+- Use independent booking IDs
+- Use realistic passenger names
+- Store check-in status as boolean
+
+Next Session:
+- Build bookings dataset
+- Verify flight-booking relationships
+- Prepare for report functions

@@ -116,6 +116,11 @@ FUTURE IMPROVEMENTS (NOT FOR MONTH 1)
 - Real Flight API Integration
 - Database Storage
 - Web Dashboard
+- Operating Costs
+- Seat Assignment System
+- Seat Numbers
+- Boarding Groups
+- Baggage Tracking
 
 ==================================================
 DATA STRUCTURE
