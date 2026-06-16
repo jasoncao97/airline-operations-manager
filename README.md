@@ -7,5 +7,3 @@ Built as part of my software development learning journey.
 ## Project Information
 
 Month 1 – JavaScript Foundations Project
-
-Status: Planning & Architecture Phase
