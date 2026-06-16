@@ -109,22 +109,41 @@ Next Session:
 - Verify data relationships
 - Prepare for report function development
 
-## Session 3 - Data Design
+## Session 3 - Data Design & Creation
 
 Completed:
-- Built airports dataset
-- Built flights dataset
-- Finalized booking architecture
+
+* Built airports dataset
+* Built flights dataset
+* Built bookings dataset
+* Verified relationships between datasets
 
 Key Decisions:
-- Use airport codes as references
-- Remove passenger count from flights
-- Store duration in minutes
-- Use independent booking IDs
-- Use realistic passenger names
-- Store check-in status as boolean
+
+* Airport codes act as identifiers
+* Flight numbers act as identifiers
+* Booking IDs remain independent from flight numbers
+* Passenger counts will be derived from bookings
+* Flight duration stored in minutes
+* Check-in status stored as boolean values
+
+Lessons Learned:
+
+* Data design is the foundation of software systems
+* Relationships between datasets are more important than individual records
+* Store data in the format that is easiest to work with
+* Avoid storing duplicate information
+
+Architecture Reflection:
+
+* It is becoming easier to think about data structures before coding
+* Realistic datasets make reports feel more like software and less like exercises
+* Good architecture decisions simplify future features
 
 Next Session:
-- Build bookings dataset
-- Verify flight-booking relationships
-- Prepare for report functions
+
+* Create first report functions
+* Show all flights
+* Find flight by number
+* Find flights by destination
+* Count passengers using bookings
