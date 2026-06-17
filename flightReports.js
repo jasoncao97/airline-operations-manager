@@ -55,3 +55,90 @@ function findFlightsByDestination(flights, destination) {
         console.log("Flight not found");
     }
 }
+
+function getAvailableSeats(flights, bookings, flightNumber) {
+    let passengerCount = getPassengerCountForFlight(bookings, flightNumber);
+    
+    for (let i = 0; i < flights.length; i++) {
+        if (flightNumber === flights[i].flightNumber) {
+            return flights[i].seats - passengerCount;
+        }
+    }
+    return "Flight not found";
+} 
+
+function capacityReport(flights, bookings) {
+    for (let i = 0; i < flights.length; i++) {
+        let flight = flights[i];
+
+        let passengerCount = 
+            getPassengerCountForFlight(bookings, flight.flightNumber);
+
+        let availableSeats = 
+            getAvailableSeats(flights, bookings, flight.flightNumber);
+
+        console.log(
+            flight.flightNumber +
+            " | Seats: " +
+            flight.seats + 
+            " | Booked: " +
+            passengerCount +
+            " | Available: " +
+            availableSeats
+        );
+    }
+}
+
+function findFlightsRequiringAttention(flights, bookings) {
+    let foundFlight = false;
+
+    for (let i = 0; i < flights.length; i++) {
+        let flight = flights[i];
+
+        let passengerCount =
+            getPassengerCountForFlight(bookings, flight.flightNumber);
+
+        if (
+            flight.status === "Delayed" ||
+            flight.status === "Cancelled"
+        ) {
+            foundFlight = true;
+
+            console.log(
+                flight.flightNumber +
+                " | " +
+                flight.status +
+                " | Booked: " +
+                passengerCount
+            );
+        }
+    }
+    if (foundFlight === false) {
+        console.log("No flights require attention");
+    }
+}
+
+function boardingReadinessReport(flights, bookings) {
+    for (let i = 0; i < flights.length; i++) {
+        let flight = flights[i];
+
+        let passengerCount = 
+            getPassengerCountForFlight(bookings, flight.flightNumber);
+
+        let checkedInCount = 
+            getCheckedInPassengerCountForFlight(bookings, flight.flightNumber);
+
+        let remainingCount = 
+            passengerCount - checkedInCount;
+
+        console.log(
+            flight.flightNumber +
+            " | Booked: " +
+            passengerCount +
+            " | Checked In: " +
+            checkedInCount +
+            " | Remaining: " +
+            remainingCount
+        );
+    }
+}
