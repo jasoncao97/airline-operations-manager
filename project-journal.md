@@ -234,3 +234,51 @@ Next Session:
 * Connect airports and flights datasets
 * Build airport activity reports
 * Continue improving software architecture and code organization
+
+## Session 5 - Dashboard & Revenue Reporting
+
+Completed:
+
+* Created airportReports.js
+* Built getDepartureCountForAirport()
+* Built getArrivalCountForAirport()
+* Built airportActivityReport()
+* Built getFlightsRequiringAttentionCount()
+* Built dailySummaryReport()
+* Added dashboard summary metrics
+* Built getFlightRevenue()
+* Built getTotalRevenue()
+* Built revenueReport()
+* Added revenue reporting to operations dashboard
+* Expanded dashboard to use Airports, Flights, and Bookings datasets
+
+Key Decisions:
+
+* Create separate Airport Activity section in dashboard
+* Use helper functions for airport activity calculations
+* Use helper functions for revenue calculations
+* Keep business logic separate from report display logic
+* Show Total Revenue in both Daily Summary and Revenue Report
+* Place Daily Summary at the top of the dashboard for manager visibility
+* Add Revenue Report after Capacity Report
+
+Lessons Learned:
+
+* Helper functions can build on other helper functions
+* Business logic should have a single source of truth
+* Dashboard-level functions can combine multiple datasets
+* Reports should focus on displaying information while helpers perform calculations
+* Financial metrics can be layered onto existing operational data
+* Software systems often evolve incrementally by adding new reports and KPIs
+
+Architecture Reflection:
+
+* I am becoming more comfortable identifying when a helper function is needed versus a report function
+* I am starting to recognize reusable patterns such as:
+    * Count helpers
+    * Search helpers
+    * Calculation helpers
+    * Report functions
+* It is becoming easier to think about how datasets connect together before writing code
+* Building reports from existing helper functions feels much easier than writing all logic directly inside reports
+

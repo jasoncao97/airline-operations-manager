@@ -61,32 +61,27 @@ function getAvailableSeats(flights, bookings, flightNumber) {
     
     for (let i = 0; i < flights.length; i++) {
         if (flightNumber === flights[i].flightNumber) {
-            return flights[i].seats - passengerCount;
+            let availableSeats =
+                flights[i].seats - passengerCount;
+            
+            return availableSeats;
         }
     }
     return "Flight not found";
 } 
 
-function capacityReport(flights, bookings) {
+function getFlightsRequiringAttentionCount(flights) {
+    let attentionCount = 0;
+
     for (let i = 0; i < flights.length; i++) {
-        let flight = flights[i];
-
-        let passengerCount = 
-            getPassengerCountForFlight(bookings, flight.flightNumber);
-
-        let availableSeats = 
-            getAvailableSeats(flights, bookings, flight.flightNumber);
-
-        console.log(
-            flight.flightNumber +
-            " | Seats: " +
-            flight.seats + 
-            " | Booked: " +
-            passengerCount +
-            " | Available: " +
-            availableSeats
-        );
+        if (
+            flights[i].status === "Delayed" ||
+            flights[i].status === "Cancelled"
+        ) {
+            attentionCount++;
+        }
     }
+    return attentionCount;
 }
 
 function findFlightsRequiringAttention(flights, bookings) {
@@ -118,6 +113,28 @@ function findFlightsRequiringAttention(flights, bookings) {
     }
 }
 
+function capacityReport(flights, bookings) {
+    for (let i = 0; i < flights.length; i++) {
+        let flight = flights[i];
+
+        let passengerCount = 
+            getPassengerCountForFlight(bookings, flight.flightNumber);
+
+        let availableSeats = 
+            getAvailableSeats(flights, bookings, flight.flightNumber);
+
+        console.log(
+            flight.flightNumber +
+            " | Seats: " +
+            flight.seats + 
+            " | Booked: " +
+            passengerCount +
+            " | Available: " +
+            availableSeats
+        );
+    }
+}
+
 function boardingReadinessReport(flights, bookings) {
     for (let i = 0; i < flights.length; i++) {
         let flight = flights[i];
@@ -142,3 +159,4 @@ function boardingReadinessReport(flights, bookings) {
         );
     }
 }
+
